@@ -19,10 +19,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore Fluidize.csproj
+        run: dotnet restore Fluidize/Fluidize.csproj
 
       - name: Build application
-        run: dotnet build Fluidize.csproj --configuration Release --no-restore
+        run: dotnet build Fluidize/Fluidize.csproj --configuration Release --no-restore
 
       - name: Check build status
-        run: dotnet build Fluidize.csproj --configuration Release --no-restore --no-incremental
+        run: dotnet build Fluidize/Fluidize.csproj --configuration Release --no-restore --no-incremental
