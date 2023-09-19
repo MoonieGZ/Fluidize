@@ -8,9 +8,9 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine-amd64 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Fluidize.csproj", "."]
+COPY ["Fluidize/Fluidize.csproj", "."]
 RUN dotnet restore "./Fluidize.csproj"
-COPY . .
+COPY Fluidize/ .
 WORKDIR "/src/."
 RUN dotnet build "Fluidize.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
